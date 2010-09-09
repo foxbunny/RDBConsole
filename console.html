@@ -12,9 +12,11 @@
         </div>
         <div id="input">
             <form action="#" method="post" name="query_form" id="query_form">
-                <input type="text" name="username" />
-                <input type="text" name="authcode" />
-                <textarea id="query" name="query"></textarea>
+                <p><label for="username">Username:</label><input type="text" name="username" id="username"/></p>
+                <p><label for="authcode">Authcode:</label><input type="text" name="authcode" id="authcode"/></p>
+                <p><label for="query">Query:</label></p>
+                <textarea id="query" name="query" id="query"></textarea>
+                <p><input type="submit" value="Execute"/></p>
             </form>
         </div>
         <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
