@@ -6,20 +6,37 @@
         <title>RDBHost console</title>
         <meta name="content-type" content="text/html; charset=utf-8" />
     </head>
+    <style type="text/css">
+        textarea {
+            width: 90%;
+            height: 10em;
+        }
+    </style>
     <body>
+        <h1>RDBConsole v0.0.1</h1>
         <div id="console">
-            <!-- console output -->
+            <table id="query_results">
+            <!-- query results -->
+            </table>
         </div>
         <div id="input">
+            <h2>Console input</h2>
+            <p><small><strong>Your credentials will be saved in your browser for 20 days.<br /> You can click the button below to remove them from the browser.</strong></small></p>
+            <button id="remove_cred">Delete credentials</button>
             <form action="#" method="post" name="query_form" id="query_form">
-                <p><label for="username">Username:</label><input type="text" name="username" id="username"/></p>
-                <p><label for="authcode">Authcode:</label><input type="text" name="authcode" id="authcode"/></p>
+                <p>
+                    <input type="text" name="username" id="username" class="required" maxlength="11" minlength="11" value="username"/> 
+                    <input type="text" name="authcode" id="authcode" class="required" maxlength="50" minlength="50" value="authcode" size="50" />
+                </p>
                 <p><label for="query">Query:</label></p>
-                <textarea id="query" name="query" id="query"></textarea>
-                <p><input type="submit" value="Execute"/></p>
+                <textarea id="query" name="query" id="query" class="required" minlength="10"></textarea>
+                <p><input type="reset" value="Reset form"/> <input type="submit" value="Execute"/></p>
             </form>
         </div>
         <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="jquery.cookie.js"></script>
+        <script type="text/javascript" src="jquery.validate.pack.js"></script>
+        <script type="text/javascript" src="jquery.rdbhost.js"></script>
         <script type="text/javascript" src="console.js"></script>
     </body>
 </html>
