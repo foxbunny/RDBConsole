@@ -19,11 +19,11 @@ $(document).ready(function () {
     // Submit handler
     $("#query_form").validate({
         submitHandler: function (form) {
-            $("#console").empty()
+            $("#console pre").empty()
             var username = $("#username").val();
             var authcode = $("#authcode").val();
             $.cookie("rdbconsole_creds", username + authcode, {expires: 20});
-            $("#console").append('<img src="loading.gif" alt="Loading..." />');
+            $("#console pre").append('<img src="loading.gif" alt="Loading..." />');
             $.rdbHostConfig({
                 userName: username,
                 authcode: authcode,
@@ -31,7 +31,7 @@ $(document).ready(function () {
                     $("#console").html("<strong>Error:</strong> " + error_data);
                 }
             })
-            $("#console").datadump({
+            $("#console pre").datadump({
                 q: $("#query").val()
             });
         }
