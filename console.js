@@ -19,7 +19,7 @@ $(document).ready(function () {
     // Submit handler
     $("#query_form").validate({
         submitHandler: function (form) {
-            $("#console").empty();
+            $("#console").empty()
             var username = $("#username").val();
             var authcode = $("#authcode").val();
             $.cookie("rdbconsole_creds", username + authcode, {expires: 20});
