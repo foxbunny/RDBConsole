@@ -1,8 +1,13 @@
-RDBConsole v0.0.1
+RDBConsole v0.0.2
 =================
 
 __Very__ basic browser-based console for use with 
 [RDBHost](http://www.rdbhost.com/) service.
+
+Changelog for v0.0.2
+--------------------
+
+* Missing files were entered into repository.
 
 Features
 --------
