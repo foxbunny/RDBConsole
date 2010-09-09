@@ -1,0 +1,55 @@
+RDBConsole v0.0.1
+=================
+
+__Very__ basic browser-based console for use with 
+[RDBHost](http://www.rdbhost.com/) service.
+
+Features
+--------
+
+* Provides fieds for authentication (no JavaScript source modification)
+* Remembers the credentials for 20 days automatically
+* Can make browser 'forget' the credentials instantly
+* Retrieves query results and dumps the raw JSON
+
+Installation
+------------
+
+To set up RDBConsole, you need to set up your hosts file to enable same-origin 
+policy to work. This is done by setting up a subdomain for your localhost 
+(assuming you are working on a local system). To do that, first give your
+localhost a ``.tld`` suffix, to make it a fully qualified domain name.
+
+Edit your ``/etc/hosts`` file (on Linux and BSD systems) and add the following
+line:
+
+    127.0.0.1 localhost.tld
+    
+Next, you have to set up the RDBHost proxy subdomain. This is done by adding
+the following line to your ``/etc/hosts``:
+
+    208.78.103.48 rdbhost.localhost.tld
+    
+It is assumed that the subdomain is ``rdbhost``. For now, there is no 
+configuration UI for the subdomain, so it is advised that you stick with the
+defaults. If you want to use a custom subdomain, you're on your own.
+
+Once this is set up, copy the files in this repository to a location servable
+by your HTTP server, and direct your browser to console.html.
+
+Using RDBConsole
+----------------
+
+To use the console, just type in your credentials into the appropriate fields,
+and the query into the large query text box. Hit ``Execute``, and the results 
+will be loaded in the area above the form.
+
+Your credentials are stored in a cookie. If you wish to remove the cookie,
+click on the ``Delete credentials`` button, and the cookie will be removed. 
+Cookie expires automatically after 20 days.
+
+Bugs and feature requests
+-------------------------
+
+Use the [Issue tracker at GitHub.com](http://github.com/foxbunny/RDBConsole/issues)
+to report any issues.
